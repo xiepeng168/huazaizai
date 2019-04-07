@@ -1,0 +1,13 @@
+.index__load {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 750rpx;
+    height: 100vh;
+    background: #de613f;
+}
+
+.index__load image {
+    width: 498rpx;
+    height: 144rpx;
+}

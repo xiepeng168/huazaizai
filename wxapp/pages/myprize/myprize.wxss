@@ -1,0 +1,235 @@
+.myprize {
+    overflow: hidden;
+    background: #a14a3f;
+    min-height: 100vh;
+    position: fixed;
+}
+
+.myprize__complain {
+    position: fixed;
+    top: 100rpx;
+    right: 0;
+    width: 134rpx;
+    height: 59rpx;
+    z-index: 333;
+}
+
+.myprize__complain image {
+    width: 134rpx;
+    height: 59rpx;
+}
+
+.myprize__head {
+    position: relative;
+    width: 680rpx;
+    padding-top: 100rpx;
+    padding-bottom: 25rpx;
+    margin: 120rpx auto 0;
+    border-radius: 15rpx;
+    background: #fff;
+}
+
+.myprize__head--user {
+    position: absolute;
+    top: -68rpx;
+    left: 50%;
+    transform: translate(-50%,0);
+    display: flex;
+    justify-content: center;
+    width: 188rpx;
+    height: 165rpx;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALwAAAClCAMAAADRTmfKAAAAilBMVEUAAAD///+prLeBhpb9/v5UW3HDxcxpboH7+/xeZHhZYHVJUGfx8vPp6u3d3uJwdYhPVmzw8fPMztTIytG8vsd8gZJjaX3n6Ovi4+fU1dudoa3v7/GJjZz29vfz8/Xr7O/Y2t+0tsCkqLOanauVmaZ3fI319ffl5urb3OH5+fq1uMGytb/////y8vSL20j6AAAALHRSTlMAyWxAxg+IJsQaFgS5saQuC7mRjYA8IK6pmmC2ScC7tJ54Z1xWNb6socJ6dmRkRXIAAAKnSURBVHja7NmJjqJAEAbgKrkEuURFRR3vY3b/ff/X24yT2cxGMwI23dWJ3xP8VKqLgibl8sCptv58Nnw7MZ/ehrO5v62cICfhPKdXDBl3cVz0HI9kypfjNeMBXo+X4h4grDaMmjitQhIj36eMRjjdyzgCR99FC65/JNOWM0ZLPFuSSfsh4wk83JMph5voLeIfyAQnYSjAiUO6lXOGIjwvSaueC4XcHumTTRlK8TQjTXoM5VhP8cOU0QFOI+rcZIWOrCZ0Q37LfOEddWrE6BCPqDv5hdEpvuTUkShB55KIOhEuoMEipA6UMbSIS1IujKFJrLz20QLaLCJSykugUZKTQoMUWqWkkA+92LdjJ+h6yZwwtOMJKRGuYMAqIhVSGHGxs+HVtX3GMIQzetYUxkxtbRoVjVO6MMgt6RlzGDWnJzgMo9ih9tYwbE2tHRjtSPgbEsO4d4/aqYwXHsCY2nmDAG5oacdf+bYtBt/1I2ruKKPwQI+aG0GI04Ca8lxIsaSmKohxpqbOEIMDaqaUclw/FNTMLwjiBha+Xf/x7Rzyn/qNSr+BLE1KH8gZ8p/e65d+IOq4Xm2prvAPpKl/WzKBPBPrdrJvRlSP04c8/Xql92aQaOZRDVvI9NvWpvnQd4TduDaSPGqcgcRJ82U0+Dn7GJKNB/Zm/zF9JG2ZvLWJ6D5HwI/Vh2KH7ggKaXvwfW4R3ET3pY73W33/v/hZYU/0a/wioysv201lfbHWwedd5hHBWswWhwde4Wt6hX+Fl+AVvqZX+L/tzjENAAAMBCH/rmvhx0sDCpAvkB/JyxfIj+TlC+RH8vIF8iN5+QL5kbx8gfxIXr5AfiQvXyA/kpcvkB/JyxfIj+TlC+RH8vIF8iN5+QL5kbx8gfxIXr5AfiQvXyA/kn+TP/36WEs4mAOHAAAAAElFTkSuQmCC") 0 0/188rpx 165rpx no-repeat;
+}
+
+.myprize__head--user .showAvatar .avatar {
+    display: inline-block;
+    width: 115rpx;
+    height: 115rpx;
+}
+
+.myprize__head--user .showAvatar {
+    width: 115rpx;
+    height: 115rpx;
+    border: 10rpx solid #fff;
+    border-radius: 100rpx;
+    box-shadow: 0 8rpx 8rpx rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.myprize__head--nav {
+    display: flex;
+}
+
+.myprize__head--list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 146rpx;
+}
+
+.myprize__head--tit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28rpx;
+    color: #222;
+}
+
+.myprize__head--tit image {
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 6rpx;
+}
+
+.myprize__head--con {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 30rpx;
+    font-size: 60rpx;
+    color: #d45b4a;
+}
+
+.myprize__head--con view:last-child {
+    font-size: 25rpx;
+    color: #d45b4a;
+    padding-bottom: 13rpx;
+    margin-right: 6rpx;
+}
+
+.myprize__head--btn {
+    display: flex;
+    justify-content: space-between;
+    width: 640rpx;
+    margin: 45rpx auto 0;
+}
+
+.myprize__head--withdraw {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 180rpx;
+}
+
+.myprize__head--withdraw view:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 180rpx;
+    height: 80rpx;
+    border-radius: 40rpx;
+    font-size: 30rpx;
+    color: #fff;
+    background: #d45b4a;
+}
+
+.myprize__head--withdraw view:last-child {
+    margin-top: 8rpx;
+    font-size: 20rpx;
+    color: #d45b4a;
+}
+
+.myprize__head--withdraw button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 180rpx;
+    height: 80rpx;
+    border-radius: 40rpx;
+    font-size: 30rpx;
+    color: #fff;
+    background: #d45b4a;
+}
+
+.myprize__head--withdraw button[plain] {
+    border: 0;
+}
+
+.myprize__head--service {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 420rpx;
+    height: 80rpx;
+    border-radius: 40rpx;
+    font-size: 30rpx;
+    color: #fff;
+    background: #1db033;
+}
+
+.myprize__record {
+    width: 680rpx;
+    margin: 25rpx auto 0;
+    border-radius: 15rpx;
+    background: #fff;
+    overflow: hidden;
+}
+
+.myprize__record--tit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 680rpx;
+    height: 85rpx;
+    font-size: 30rpx;
+    color: #2c3246;
+}
+
+.myprize__record--nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 680rpx;
+    height: 70rpx;
+    background: #f2f2f2;
+}
+
+.myprize__record--nav view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25rpx;
+    color: #5b5b5b;
+    width: 375rpx;
+}
+
+.myprize__record--nav view:first-child {
+    width: 180rpx;
+}
+
+.myprize__record--con {
+    height: 230rpx;
+}
+
+.myprize__record--list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 680rpx;
+    height: 80rpx;
+    border-bottom: 3rpx solid #e5e5e5;
+}
+
+.myprize__record--list view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30rpx;
+    color: #5b5b5b;
+    width: 375rpx;
+}
+
+.myprize__record--list view:first-child {
+    width: 180rpx;
+}
+
+.myprize__ad {
+    display: flex;
+    justify-content: center;
+    margin-top: 25rpx;
+}
+
+.myprize__ad image {
+    width: 750rpx;
+    height: 150rpx;
+}

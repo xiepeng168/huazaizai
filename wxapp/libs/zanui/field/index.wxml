@@ -1,0 +1,7 @@
+<zan-cell cellClass="zan-cell--field" class="field-class zan-field {{error?'zan-field--error':''}} {{mode==='wrapped'?'zan-field--wrapped':''}} {{!showBorder?'zan-field--no-border':''}}">
+    <view class="zan-cell__hd zan-field__title" slot="icon" wx:if="{{title}}">
+    {{title}}
+  </view>
+    <textarea autoHeight bindblur="handleFieldBlur" bindfocus="handleFieldFocus" bindinput="handleFieldChange" class="zan-field__input zan-cell__bd {{right?'zan-field__input--right':''}}" disabled="{{disabled}}" focus="{{focus}}" maxlength="{{maxlength}}" placeholder="{{placeholder}}" placeholderClass="zan-field__placeholder" value="{{value}}" wx:if="{{type==='textarea'}}"></textarea>
+    <input bindblur="handleFieldBlur" bindfocus="handleFieldFocus" bindinput="handleFieldChange" class="zan-field__input zan-cell__bd {{right?'zan-field__input--right':''}}" disabled="{{disabled}}" focus="{{focus}}" maxlength="{{maxlength}}" placeholder="{{placeholder}}" placeholderClass="zan-field__placeholder" type="{{inputType||'text'}}" value="{{value}}" wx:else></input>
+</zan-cell>

@@ -1,0 +1,3 @@
+<view class="index__load">
+    <image src="/images/icons/loading.gif"></image>
+</view>

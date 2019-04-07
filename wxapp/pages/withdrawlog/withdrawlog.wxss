@@ -1,0 +1,58 @@
+page>view {
+    background: #f1f0f5;
+}
+
+page {
+    background: #f1f0f5;
+}
+
+.jilu_box view {
+    height: 108rpx;
+    background: #f1f0f5;
+    display: flex;
+}
+
+.jilu_box view:nth-of-type(2n) {
+    background: white;
+}
+
+.jilu_box view text {
+    font-size: 32rpx;
+    line-height: 108rpx;
+    color: #838383;
+}
+
+.jilu_box view text:nth-of-type(1) {
+    width: 220rpx;
+    display: block;
+    text-align: center;
+    margin-right: 60rpx;
+}
+
+.jilu_box view text:nth-of-type(2) {
+    width: 200rpx;
+    display: block;
+    text-align: center;
+    margin-right: 35rpx;
+}
+
+.jilu_box view text:nth-of-type(3) {
+    width: 220rpx;
+    display: block;
+    text-align: center;
+    height: 62rpx;
+    line-height: 62rpx;
+    align-self: center;
+}
+
+.jilu_box view .off {
+    width: 220rpx;
+    display: block;
+    text-align: center;
+    color: white;
+    background: #57b837;
+    border-radius: 500rpx;
+    height: 62rpx;
+    line-height: 62rpx;
+    align-self: center;
+}

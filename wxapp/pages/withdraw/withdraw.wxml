@@ -1,0 +1,37 @@
+<view class="tixian_box">
+    <view class="tixian_top">
+        <text bindtap="withdrawlog">提现记录</text>
+        <text>我的余额</text>
+        <text>￥{{balance}}</text>
+    </view>
+    <view class="tixian_bottom">
+        <view>
+            <image src="/images/icons/qian.png"></image>
+            <input bindinput="getMoney" placeholder="请输入提现金额" placeholderStyle="font-size:32rpx;" type="digit" value="{{inputMoney}}"></input>
+            <text bindtap="withAll" class="qbtx">全部提现</text>
+        </view>
+        <button bindtap="gowithdraw" class="btnwithdraw">提现</button>
+        <button bindtap="goindex" typr="default">继续游戏</button>
+        <view class="tishi_txt">
+            <text>温馨提示:</text>
+            <text wx:for="{{WarmTips}}" wx:key="index">{{item}}</text>
+        </view>
+    </view>
+</view>
+<view class="chenggong" wx:if="{{withdrawSuccess}}">
+    <view class="jiemian">
+        <view class="jiemian__click">
+            <image src="/images/icons/click.png"></image>
+        </view>
+        <view class="jiemian__tit">
+            <image src="{{realTimeInfo.TakeMoneySuccess[4]}}"></image>
+        </view>
+        <view class="jiemian__code">{{OrderId}}</view>
+        <view bindtap="clip" class="jiemian__clip">复制提现码</view>
+        <view class="jiemian__cue">{{realTimeInfo.TakeMoneySuccess[0]}}<text>{{realTimeInfo.TakeMoneySuccess[1]}}</text>{{realTimeInfo.TakeMoneySuccess[2]}}</view>
+        <view class="jiemian__step">
+            <image mode="widthFix" src="{{realTimeInfo.TakeMoneySuccess[3]}}"></image>
+        </view>
+        <image bindtap="closewidthdraw" class="guanbi" src="/images/icons/guanbi.png"></image>
+    </view>
+</view>

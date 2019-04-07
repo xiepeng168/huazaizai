@@ -1,0 +1,56 @@
+<template name="nochance">
+    <view class="revive">
+        <view class="revive__mask"></view>
+        <view class="revive__con">
+            <view bindtap="closeNochance" class="revive__close">
+                <image src="/images/icons/close.png"></image>
+            </view>
+            <view class="revive_nochence">
+                <view>没机会了，请明日再来</view>
+            </view>
+            <view class="revive__btn">
+                <button bindtap="maskback">返回</button>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="red">
+    <view class="revive">
+        <view class="revive__mask"></view>
+        <view class="revive__con">
+            <view bindtap="closred" class="revive__close">
+                <image src="/images/icons/close.png"></image>
+            </view>
+            <view class="revive_title">
+        获得道具礼包
+      </view>
+            <view class="revive_red">
+                <view>{{getnum}}</view>
+            </view>
+            <view class="revive__btn">
+                <button bindtap="closred">去玩游戏</button>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="chance">
+    <view class="revive">
+        <view class="revive__mask"></view>
+        <view class="revive__con">
+            <view bindtap="closeChance" class="revive__close">
+                <image src="/images/icons/close.png"></image>
+            </view>
+            <view class="revive_title">
+        获得道具礼包
+      </view>
+            <view class="revive__img">
+                <view>可瓜分{{num}}次挑战机会</view>
+            </view>
+            <view class="revive__tit">先到先得，抢完为止</view>
+            <view class="revive__t">（自己也可以抢哦~）</view>
+            <view class="revive__btn">
+                <button openType="share">{{Button}}</button>
+            </view>
+        </view>
+    </view>
+</template>

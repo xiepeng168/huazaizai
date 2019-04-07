@@ -1,0 +1,19 @@
+<template name="redopen">
+    <view class="redopen">
+        <view class="redopen__mask"></view>
+        <view class="redopen__con" style="background: url(\"{{redbg}}\") 0 0/700rpx 898rpx no-repeat;">
+            <view bindtap="redresult"></view>
+        </view>
+        <swiper autoplay="true" circular="true" class="index__liu">
+            <swiper-item wx:for="{{banner}}" wx:key="index">
+                <ad unitId="{{item.unit_id}}" wx:if="{{item.open_type=='ad'&&item.unit_id}}"></ad>
+                <navigator appId="{{item.open_appid}}" path="{{item.url}}" target="miniProgram" wx:elif="{{item.open_type=='wxapp'}}">
+                    <image mode="widthFix" src="{{item.thumb}}"></image>
+                </navigator>
+                <view bindtap="gomin" data-appid="{{item.open_appid}}" data-opentype="{{item.open_type}}" data-path="{{item.url}}" data-qrcode="{{item.qrcode}}" wx:else>
+                    <image mode="widthFix" src="{{item.thumb}}"></image>
+                </view>
+            </swiper-item>
+        </swiper>
+    </view>
+</template>

@@ -1,0 +1,45 @@
+.redopen {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 333;
+}
+
+.redopen__mask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.6);
+}
+
+.redopen__con {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 700rpx;
+    height: 898rpx;
+}
+
+.redopen__con view {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 450rpx;
+    height: 260rpx;
+}
+
+.redopen__ad {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 750rpx;
+}

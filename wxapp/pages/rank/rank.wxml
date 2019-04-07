@@ -1,0 +1,49 @@
+<view class="rank">
+    <view class="rank__nav">
+        <view bindtap="honorBtn" class="{{ishistory?'':'active'}}">
+            <text>荣誉榜</text>
+        </view>
+        <view bindtap="speedBtn" class="{{ishistory?'active':''}}">
+            <text>毅力榜</text>
+        </view>
+    </view>
+    <scroll-view scrollY class="rank__con {{ishistory?'':'on'}}">
+        <view class="rank__list" wx:for="{{honorList}}" wx:key="index">
+            <view class="rank__list--head">
+                <view class="rank__list--num">{{index+1}}</view>
+                <view class="rank__list--img">
+                    <image src="{{item.avatar}}"></image>
+                </view>
+                <view class="rank__list--name">{{item.nickname}}</view>
+            </view>
+            <view class="rank__list--count">
+                {{item.text.left}}<text>{{item.text.center}}</text>{{item.text.right}}
+            </view>
+        </view>
+    </scroll-view>
+    <scroll-view scrollY class="rank__con {{ishistory?'on':''}}">
+        <view class="rank__list" wx:for="{{persevereList}}" wx:key="index">
+            <view class="rank__list--head">
+                <view class="rank__list--num">{{index+1}}</view>
+                <view class="rank__list--img">
+                    <image src="{{item.avatar}}"></image>
+                </view>
+                <view class="rank__list--name">{{item.nickname}}</view>
+            </view>
+            <view class="rank__list--count">
+                <text>{{item.chance_times}}次</text>
+            </view>
+        </view>
+    </scroll-view>
+</view>
+<swiper autoplay="true" circular="true" class="index__liu">
+    <swiper-item wx:for="{{banner}}" wx:key="index">
+        <ad unitId="{{item.unit_id}}" wx:if="{{item.open_type=='ad'&&item.unit_id}}"></ad>
+        <navigator appId="{{item.open_appid}}" path="{{item.url}}" target="miniProgram" wx:elif="{{item.open_type=='wxapp'}}">
+            <image mode="widthFix" src="{{item.thumb}}"></image>
+        </navigator>
+        <view bindtap="gomin" data-appid="{{item.open_appid}}" data-opentype="{{item.open_type}}" data-path="{{item.url}}" data-qrcode="{{item.qrcode}}" wx:else>
+            <image mode="widthFix" src="{{item.thumb}}"></image>
+        </view>
+    </swiper-item>
+</swiper>

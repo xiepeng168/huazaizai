@@ -1,0 +1,11 @@
+<template name="date-picker-view">
+    <picker-view bindchange="change" class="picker-visible" indicatorStyle="height: 50px;" value="{{selected}}">
+        <template is="picker-view-column" data="{{data:dataList[0],className:'year-view-column',hidden:!use['years'],tip:'年'}}"></template>
+        <template is="picker-view-column" data="{{data:dataList[1],hidden:!use['months'],tip:'月'}}"></template>
+        <template is="picker-view-column" data="{{data:dataList[2],hidden:!use['days'],tip:'日'}}"></template>
+        <template is="picker-view-column" data="{{data:dataList[3],hidden:!use['hours'],tip:'时'}}"></template>
+        <template is="picker-view-column" data="{{data:dataList[4],hidden:!use['minutes'],tip:'分'}}"></template>
+        <template is="picker-view-column" data="{{data:dataList[5],hidden:!use['seconds'],tip:'秒'}}"></template>
+    </picker-view>
+</template>
+<import src="./picker-view-column.wxml"></import>

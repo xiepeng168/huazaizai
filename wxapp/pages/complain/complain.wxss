@@ -1,0 +1,79 @@
+page {
+    background: #f1f0f5;
+}
+
+.complain__tit {
+    padding-left: 30rpx;
+    font-size: 30rpx;
+    color: #aaa;
+    display: flex;
+    align-items: center;
+    height: 75rpx;
+}
+
+.complain__check {
+    display: flex;
+    flex-direction: column;
+    padding-left: 30rpx;
+    background: #FFF;
+}
+
+.complain__check label {
+    background: #FFF;
+    font-size: 35rpx;
+    height: 85rpx;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #d9d9d9;
+    color: #1e1e1e;
+}
+
+.complain__check label:last-child {
+    border: none;
+}
+
+.complain__check label checkbox {
+    display: none;
+}
+
+.complain__check image {
+    width: 40rpx;
+    height: 40rpx;
+    margin-left: 25rpx;
+}
+
+.complain__tel {
+    font-size: 30rpx;
+    color: #aaa;
+    padding-left: 30rpx;
+    height: 50rpx;
+}
+
+.complain__num {
+    font-size: 32rpx;
+    background: #FFF;
+    padding-left: 30rpx;
+    display: flex;
+    align-items: center;
+    height: 90rpx;
+}
+
+.complain__num text {
+    margin-right: 70rpx;
+}
+
+.complain__num input {
+    flex: 1;
+}
+
+.complain__btn {
+    background: #1aad19;
+    font-size: 30rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    width: 690rpx;
+    margin: 40rpx auto;
+    height: 85rpx;
+}

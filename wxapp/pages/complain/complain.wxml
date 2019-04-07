@@ -1,0 +1,8 @@
+<view class="complain__tit">请选择投诉原因</view>
+<checkbox-group bindchange="checkboxChange" class="complain__check">
+    <label class="checkbox" wx:for="{{items}}" wx:for-index="idx" wx:key="idx">
+    {{item.value}}<checkbox checked="{{item.checked}}" value="{{item.value}}"></checkbox>
+        <image src="{{select[idx]?'/images/icons/dui.png':''}}"></image>
+    </label>
+</checkbox-group>
+<button bindtap="submit" class="complain__btn">确认投诉</button>

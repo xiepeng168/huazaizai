@@ -1,0 +1,16 @@
+<import src="./date-picker-view.wxml"></import>
+<view bindtap="showPicker" class="placeholder-class" wx:if="{{!pickerView}}">{{text||placeholder}}</view>
+<view class="picker-view" wx:if="{{pickerView}}">
+    <template is="date-picker-view" data="{{dataList:dataList,selected:selected,use:use}}"></template>
+</view>
+<view wx:else>
+    <pop-manager show="{{show}}" type="bottom">
+        <view class="picker">
+            <view class="picker-action">
+                <view bindtap="hidePicker" data-action="cancel">取消</view>
+                <view bindtap="hidePicker" data-action="change">确认</view>
+            </view>
+            <template is="date-picker-view" data="{{dataList:dataList,selected:selected,use:use}}"></template>
+        </view>
+    </pop-manager>
+</view>

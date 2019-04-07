@@ -1,0 +1,45 @@
+<view class="index__load" wx:if="{{loadShow}}">
+    <image src="/images/icons/loading.gif"></image>
+</view>
+<view class="index" wx:else>
+    <view class="index__head">
+        <view class="index__share">
+            <button openType="share" plain="true"></button>
+        </view>
+        <view bindtap="ruletap" class="index__rule">规则</view>
+    </view>
+    <view class="index__logo">
+        <image mode="widthFix" src="{{indexLogo}}"></image>
+        <image hidden="{{block_hidden}}" src="/images/icons/daduiwuti.png"></image>
+    </view>
+    <button bindgetuserinfo="gameStart" class="index__btn" lang="zh_CN" openType="getUserInfo"></button>
+    <view class="index__ad">
+        <view class="index__more">
+            <block wx:for="{{appList}}" wx:key="index">
+                <navigator appId="{{item.open_appid}}" class="index__more--list" path="{{item.url}}" target="miniProgram" wx:if="{{item.open_type=='wxapp'}}">
+                    <image mode="aspectFill" src="{{item.thumb}}"></image>
+                </navigator>
+                <view bindtap="gomin" class="index__more--list" data-appid="{{item.open_appid}}" data-opentype="{{item.open_type}}" data-path="{{item.url}}" data-qrcode="{{item.qrcode}}" wx:else>
+                    <image mode="aspectFill" src="{{item.thumb}}"></image>
+                </view>
+            </block>
+        </view>
+    </view>
+    <swiper autoplay="true" circular="true" class="index__liu">
+        <swiper-item wx:for="{{banner}}" wx:key="index">
+            <ad unitId="{{item.unit_id}}" wx:if="{{item.open_type=='ad'&&item.unit_id}}"></ad>
+            <navigator appId="{{item.open_appid}}" path="{{item.url}}" target="miniProgram" wx:elif="{{item.open_type=='wxapp'}}">
+                <image mode="widthFix" src="{{item.thumb}}"></image>
+            </navigator>
+            <view bindtap="gomin" data-appid="{{item.open_appid}}" data-opentype="{{item.open_type}}" data-path="{{item.url}}" data-qrcode="{{item.qrcode}}" wx:else>
+                <image mode="widthFix" src="{{item.thumb}}"></image>
+            </view>
+        </swiper-item>
+    </swiper>
+</view>
+<import src="/template/ruler/ruler.wxml"></import>
+<template is="rule" data="{{...ruleInfo}}" wx:if="{{ruleShow}}"></template>
+<import src="/template/chance/chance.wxml"></import>
+<template is="chance" data="{{...sharechance}}" wx:if="{{getchance}}"></template>
+<template is="red" data="{{...redData}}" wx:if="{{getRed}}"></template>
+<template is="nochance" data wx:if="{{nochance}}"></template>

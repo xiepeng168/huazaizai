@@ -1,0 +1,19 @@
+<template name="rule">
+    <view class="rule">
+        <view class="rule__mask"></view>
+        <view class="rule__con">
+            <view bindtap="closerule" class="rule__close">
+                <image src="/images/icons/close.png"></image>
+            </view>
+            <scroll-view scrollY="true">
+                <view class="rule__list" wx:for="{{ruleList}}" wx:for-index="idx" wx:key="index">
+                    <view>{{idx+1}}</view>
+                    <view>{{item.title}}</view>
+                </view>
+            </scroll-view>
+            <view class="rule__btn">
+                <button hoverClass="none" openType="contact" plain="true">立即联系</button>
+            </view>
+        </view>
+    </view>
+</template>

@@ -1,0 +1,68 @@
+<view class="game__head">
+    <view bindtap="switchMusic" class="music {{musicStatus?'music_on':''}}" wx:if="{{gameShow}}">
+        <image src="/images/icons/music0.png" wx:if="{{musicStatus}}"></image>
+        <image src="/images/icons/music1.png" wx:else></image>
+    </view>
+    <view class="game__time">
+        <view wx:if="{{gameShow==false}}">
+            <image class="yihan" src="/images/icons/yihan_img.png"></image>
+        </view>
+        <view class="game_cont" wx:if="{{gameShow}}">
+            <view class="game_progress">
+                <view class="{{start?'gameAnimate':''}}" style="animation-duration: {{times}}s"></view>
+            </view>
+            <text>已答对{{step}}题</text>
+        </view>
+        <view wx:if="{{gameShow==null}}">
+            <text>限时找出正确的拼音</text>
+        </view>
+    </view>
+</view>
+<view class="game__bg">
+    <view class="game__con">
+        <view class="game__num">
+      {{readyTimes}}
+    </view>
+        <view class="game__list" wx:if="{{gameShow}}">
+            <view class="wordlist">
+                <block wx:for="{{question.title}}" wx:key="index">
+                    <view class="word" style="background: url({{matts}}) 0 0/cover no-repeat;border-right: solid 2rpx #e3d693;" wx:if="{{item==question.question}}">
+                        <text>{{item}}</text>
+                    </view>
+                    <view class="word" wx:else>
+                        <text>{{item}}</text>
+                    </view>
+                </block>
+            </view>
+            <view class="pinyinlist">
+                <view bindtap="answerfn" class="pinyin {{answerOk==true&&curentItem==index?'opt':''}} {{answerOk==false&&curentItem==index?'opf':''}}" data-idx="{{index}}" data-item="{{item}}" wx:for="{{question.options}}" wx:key="index">
+                    <text>{{item}}</text>
+                </view>
+            </view>
+            <view class="stop" wx:if="{{answerOk==true||answerOk==false}}"></view>
+        </view>
+        <view class="answer_fail" wx:if="{{gameShow==false}}">
+            <view class="mes_1">
+                <text>最高答对<text class="span">{{step}}</text>题</text>
+            </view>
+            <view class="mes_2">
+                <text wx:if="{{step==0}}">丢死人</text>
+                <text wx:elif="{{step<5}}">再努力一下</text>
+                <text wx:elif="{{step<9}}">{{message1}}</text>
+                <text wx:else>干得漂亮！</text>
+            </view>
+            <view class="mes_3">
+                <text wx:if="{{step==0}}">整了一个大鸭蛋！</text>
+                <text wx:elif="{{step<5}}">你还有救</text>
+                <text wx:elif="{{step<9}}">{{message2}}</text>
+                <text wx:else>优秀</text>
+            </view>
+            <view class="mes_4">
+                <button openType="share" style="background:url({{matts}}) 0 0/contain repeat-x;">{{message3}}</button>
+                <button bindtap="goindex" class="goindex" style="background:url({{matts}}) 0 0/contain repeat-x;">{{message4}}</button>
+            </view>
+        </view>
+    </view>
+</view>
+<import src="../../template/redopen/redopen.wxml"></import>
+<template is="redopen" data="{{...items}}" wx:if="{{getred}}"></template>

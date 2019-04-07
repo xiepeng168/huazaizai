@@ -1,0 +1,72 @@
+<navigator class="myprize__complain" url="/pages/complain/complain">
+    <image src="/images/icons/tousu.png"></image>
+</navigator>
+<view class="myprize">
+    <view class="myprize__head">
+        <view class="myprize__head--user">
+            <view class="showAvatar">
+                <open-data class="avatar" type="userAvatarUrl"></open-data>
+            </view>
+        </view>
+        <view class="myprize__head--nav">
+            <view class="myprize__head--list">
+                <view class="myprize__head--tit">挑战机会</view>
+                <view class="myprize__head--con">
+                    <view>{{userInfo.chance_num}}</view>
+                    <view>次</view>
+                </view>
+            </view>
+            <view class="myprize__head--list" hidden="{{block_hidden}}">
+                <view class="myprize__head--tit">
+                    <image src="/images/icons/qian1.png"></image>累计奖金</view>
+                <view class="myprize__head--con">
+                    <view>{{userInfo.money}}</view>
+                    <view>元</view>
+                </view>
+            </view>
+            <view class="myprize__head--list">
+                <view class="myprize__head--tit">通关次数</view>
+                <view class="myprize__head--con">
+                    <view>{{userInfo.win_num}}</view>
+                    <view>次</view>
+                </view>
+            </view>
+        </view>
+        <view class="myprize__head--btn">
+            <view class="myprize__head--withdraw" hidden="{{block_hidden}}">
+                <button bindgetuserinfo="bindGetUserInfo" openType="getUserInfo">提现</button>
+                <view>满{{userTakeMoney}}元可提现</view>
+            </view>
+            <button class="myprize__head--service" openType="contact">
+        {{serviceButton}}
+      </button>
+        </view>
+    </view>
+    <view class="myprize__record" hidden="{{block_hidden}}">
+        <view class="myprize__record--tit">领奖记录</view>
+        <view class="myprize__record--nav">
+            <view>奖金</view>
+            <view>领取时间</view>
+        </view>
+        <scroll-view scrollY class="myprize__record--con">
+            <view class="myprize__record--list" wx:for="{{myprizeList}}" wx:key="index">
+                <view>{{item.money}}</view>
+                <view>{{item.created_at}}</view>
+            </view>
+        </scroll-view>
+    </view>
+    <view bindtap="gomin" class="myprize__ad" id="{{floorList.Param.AppId}}">
+        <image mode="aspectFit" src="{{floorList.Logo}}"></image>
+    </view>
+</view>
+<swiper autoplay="true" circular="true" class="index__liu">
+    <swiper-item wx:for="{{banner}}" wx:key="index">
+        <ad unitId="{{item.unit_id}}" wx:if="{{item.open_type=='ad'&&item.unit_id}}"></ad>
+        <navigator appId="{{item.open_appid}}" path="{{item.url}}" target="miniProgram" wx:elif="{{item.open_type=='wxapp'}}">
+            <image mode="widthFix" src="{{item.thumb}}"></image>
+        </navigator>
+        <view bindtap="gomin" data-appid="{{item.open_appid}}" data-opentype="{{item.open_type}}" data-path="{{item.url}}" data-qrcode="{{item.qrcode}}" wx:else>
+            <image mode="widthFix" src="{{item.thumb}}"></image>
+        </view>
+    </swiper-item>
+</swiper>

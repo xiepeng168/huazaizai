@@ -1,0 +1,23 @@
+<view class="resultred">
+    <view class="resultred__head">
+        <image src="{{logo}}"></image>
+    </view>
+    <view class="resultred__pack">
+        <view class="resultred__tit">{{block_hidden?'':redTips[0]}}</view>
+        <view class="resultred__money">{{block_hidden?'':redmoney}}</view>
+        <view class="resultred__cue">{{block_hidden?'':redTips[1]}}</view>
+        <view bindtap="goindex" class="resultred__btn--again">继续游戏</view>
+        <view bindtap="gomyprize" class="resultred__btn--myprize" hidden="{{block_hidden}}">{{redTips[2]}}</view>
+    </view>
+    <swiper autoplay="true" circular="true" class="index__liu">
+        <swiper-item wx:for="{{banner}}" wx:key="index">
+            <ad unitId="{{item.unit_id}}" wx:if="{{item.open_type=='ad'&&item.unit_id}}"></ad>
+            <navigator appId="{{item.open_appid}}" path="{{item.url}}" target="miniProgram" wx:elif="{{item.open_type=='wxapp'}}">
+                <image mode="widthFix" src="{{item.thumb}}"></image>
+            </navigator>
+            <view bindtap="gomin" data-appid="{{item.open_appid}}" data-opentype="{{item.open_type}}" data-path="{{item.url}}" data-qrcode="{{item.qrcode}}" wx:else>
+                <image mode="widthFix" src="{{item.thumb}}"></image>
+            </view>
+        </swiper-item>
+    </swiper>
+</view>
